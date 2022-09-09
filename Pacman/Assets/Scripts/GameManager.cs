@@ -42,17 +42,11 @@ public class GameManager : MonoBehaviour
             pellet.gameObject.SetActive(true);
         }
 
-        // for(int i = 0; i < this.ghosts.Length; i++) {
-        //     this.ghosts[i].gameObject.SetActive(true);
-        // }
-
-        // this.pacman.gameObject.SetActive(true);
         ResetState();
     }
 
     private void ResetState()
     {
-        //ResetGhostMultiplier();
 
         for(int i = 0; i < this.ghosts.Length; i++) {
             this.ghosts[i].ResetState();
@@ -94,8 +88,6 @@ public class GameManager : MonoBehaviour
     public void PacmanEaten()
     {
         pacman.DeathSequence();
-
-        //this.pacman.gameObject.SetActive(false);
 
         SetLives(this.lives - 1);
 
