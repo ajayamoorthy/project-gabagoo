@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Ghost : MonoBehaviour
 {
+    public AudioClip ghostSound;
+    private AudioSource audio;
+
     public Movement movement { get; private set; }
     public GhostHome home { get; private set; }
     public GhostScatter scatter { get; private set; }
@@ -15,6 +18,7 @@ public class Ghost : MonoBehaviour
 
     private void Awake()
     {
+        audio = transform.GetComponent<AudioSource>();
         this.movement = GetComponent<Movement>();
         this.home = GetComponent<GhostHome>();
         this.scatter = GetComponent<GhostScatter>();
@@ -55,6 +59,7 @@ public class Ghost : MonoBehaviour
     {
         if(collision.gameObject.layer == LayerMask.NameToLayer("Pacman")) {
             if(this.frightened.enabled) {
+                audio.PlayOneShot(ghostSound);
                 FindObjectOfType<GameManager>().GhostEaten(this);
             } else {
                 FindObjectOfType<GameManager>().PacmanEaten();

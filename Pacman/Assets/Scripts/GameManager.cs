@@ -3,6 +3,9 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public AudioClip pelletSound;
+    private AudioSource audio;
+
     public Ghost[] ghosts;
     public Pacman pacman;
     public Transform pellets;
@@ -17,6 +20,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        audio = transform.GetComponent<AudioSource>();
         NewGame();
     }
 
@@ -100,6 +104,10 @@ public class GameManager : MonoBehaviour
 
     public void PelletEaten(Pellet pellet)
     {
+        if(!audio.isPlaying) {
+            audio.PlayOneShot(pelletSound);
+        }
+
         pellet.gameObject.SetActive(false);
 
         SetScore(this.score + pellet.points);
