@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Pacman : MonoBehaviour
 {
+    public AudioClip dieSound;
+    private AudioSource audio;
 
     public AnimatedSprite deathSequence;
     public SpriteRenderer spriteRenderer { get; private set; }
@@ -12,6 +14,7 @@ public class Pacman : MonoBehaviour
 
     private void Awake()
     {
+        audio = transform.GetComponent<AudioSource>();
         this.spriteRenderer = GetComponent<SpriteRenderer>();
         this.collider = GetComponent<Collider2D>();
         this.movement = GetComponent<Movement>();
@@ -56,6 +59,7 @@ public class Pacman : MonoBehaviour
         this.deathSequence.enabled = true;
         this.deathSequence.spriteRenderer.enabled = true;
         this.deathSequence.Restart();
+        audio.PlayOneShot(dieSound);
     }
 
 }
