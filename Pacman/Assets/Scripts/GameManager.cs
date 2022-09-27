@@ -131,6 +131,22 @@ public class GameManager : MonoBehaviour
         Invoke(nameof(ResetGhostMultiplier), pellet.duration);
     }
 
+    public void FruitEaten(Fruit fruit)
+    {
+        if(!audio.isPlaying) {
+            audio.PlayOneShot(pelletSound);
+        }
+
+        fruit.gameObject.SetActive(false);
+
+        SetScore(this.score + fruit.points);
+
+        if(!HasRemainingPellets()) {
+            this.pacman.gameObject.SetActive(false);
+            Invoke(nameof(NewRound), 3.0f);
+        }
+    }
+
     private bool HasRemainingPellets()
     {
         foreach (Transform pellet in this.pellets) {
