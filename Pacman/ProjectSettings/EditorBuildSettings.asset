@@ -29,4 +29,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/VersionNotes.unity
     guid: de27e7215f0e8d4408a40d20ad7d6158
+  - enabled: 1
+    path: Assets/Scenes/PacmanCo-Op.unity
+    guid: d6b0c1ac4b905c8429e976bc9b6e949e
+  - enabled: 1
+    path: Assets/Scenes/GameMode.unity
+    guid: 3c742d2e3ae96594caab275343f07a21
   m_configObjects: {}
