@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Movement))]
 
@@ -33,6 +34,12 @@ public class Pacman : MonoBehaviour
         }
         else if(Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) {
             this.movement.SetDirection(Vector2.right);
+        }
+        else if(Input.GetKeyDown(KeyCode.R)){
+            SceneManager.LoadScene("Pacman");
+        }
+        else if(Input.GetKeyDown(KeyCode.P)){
+            SceneManager.LoadScene("PauseMenu");
         }
 
         float angle = Mathf.Atan2(this.movement.direction.y, this.movement.direction.x);
