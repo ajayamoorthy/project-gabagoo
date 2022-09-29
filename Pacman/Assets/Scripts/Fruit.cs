@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Collider2D))]
 public class Fruit : MonoBehaviour
@@ -8,7 +9,14 @@ public class Fruit : MonoBehaviour
 
     protected virtual void Eat()
     {
-        FindObjectOfType<GameManager>().FruitEaten(this);
+        Scene scene = SceneManager.GetActiveScene();
+        if(scene.name=="PacmanCo-Op")
+        {
+            FindObjectOfType<GameManagerCoOp>().FruitEaten(this);
+        }
+        else{
+            FindObjectOfType<GameManager>().FruitEaten(this);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
