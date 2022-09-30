@@ -515,7 +515,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: PauseMenu
+          m_StringArgument: PauseMenuCo-Op
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &180213383
@@ -6982,9 +6982,9 @@ GameObject:
   - component: {fileID: 570543023}
   - component: {fileID: 570543022}
   - component: {fileID: 570543021}
-  - component: {fileID: 570543020}
+  - component: {fileID: 570543024}
   m_Layer: 5
-  m_Name: Restart(Coop)
+  m_Name: Restart Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7009,20 +7009,8 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -692.20013, y: 445.41}
-  m_SizeDelta: {x: 215.79, y: 61.28}
+  m_SizeDelta: {x: 240, y: 61.28}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &570543020
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 570543018}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db41e2824217136499506d84ff16c672, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &570543021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7067,16 +7055,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 570543020}
-        m_TargetAssemblyTypeName: CoopRestart, Assembly-CSharp
-        m_MethodName: RestartCoop
-        m_Mode: 1
+      - m_Target: {fileID: 570543024}
+        m_TargetAssemblyTypeName: ButtonOnClick, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: PacmanCo-Op
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &570543022
@@ -7117,6 +7105,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 570543018}
   m_CullTransparentMesh: 1
+--- !u!114 &570543024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 570543018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 324004d895633a84aa7329646f31b5b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &575509681
 GameObject:
   m_ObjectHideFlags: 0
@@ -11407,10 +11407,10 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 180213379}
+  - {fileID: 570543019}
   - {fileID: 901532460}
   - {fileID: 950578693}
   - {fileID: 444625233}
-  - {fileID: 570543019}
   - {fileID: 151301287}
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -11814,7 +11814,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535

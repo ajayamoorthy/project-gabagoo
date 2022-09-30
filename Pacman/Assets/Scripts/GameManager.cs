@@ -30,6 +30,12 @@ public class GameManager : MonoBehaviour
         if(this.lives <= 0 && Input.anyKeyDown) {
             NewGame();
         }
+        if(Input.GetKeyDown(KeyCode.R)) {
+            NewGame();
+        }
+        if(Input.GetKeyDown(KeyCode.P)) {
+            SceneManager.LoadScene("PauseMenu");
+        }
     }
 
     private void NewGame()
