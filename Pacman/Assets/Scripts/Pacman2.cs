@@ -1,9 +1,8 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Movement))]
 
-public class Pacman : MonoBehaviour
+public class Pacman2 : MonoBehaviour
 {
     public AudioClip dieSound;
     private AudioSource audio;
@@ -23,23 +22,17 @@ public class Pacman : MonoBehaviour
 
     public void Update()
     {
-        if(Input.GetKeyDown(KeyCode.W)) {
+        if(Input.GetKeyDown(KeyCode.UpArrow)) {
             this.movement.SetDirection(Vector2.up);
         }
-        else if(Input.GetKeyDown(KeyCode.S)) {
+        else if(Input.GetKeyDown(KeyCode.DownArrow)) {
             this.movement.SetDirection(Vector2.down);
         }
-        else if(Input.GetKeyDown(KeyCode.A)) {
+        else if(Input.GetKeyDown(KeyCode.LeftArrow)) {
             this.movement.SetDirection(Vector2.left);
         }
-        else if(Input.GetKeyDown(KeyCode.D)) {
+        else if(Input.GetKeyDown(KeyCode.RightArrow)) {
             this.movement.SetDirection(Vector2.right);
-        }
-        else if(Input.GetKeyDown(KeyCode.R)){
-            SceneManager.LoadScene("Pacman");
-        }
-        else if(Input.GetKeyDown(KeyCode.P)){
-            SceneManager.LoadScene("PauseMenu");
         }
 
         float angle = Mathf.Atan2(this.movement.direction.y, this.movement.direction.x);

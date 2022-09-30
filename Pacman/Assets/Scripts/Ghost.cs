@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Movement))]
 
@@ -57,12 +58,27 @@ public class Ghost : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.layer == LayerMask.NameToLayer("Pacman")) {
-            if(this.frightened.enabled) {
-                audio.PlayOneShot(ghostSound);
-                FindObjectOfType<GameManager>().GhostEaten(this);
-            } else {
-                FindObjectOfType<GameManager>().PacmanEaten();
+        Scene scene = SceneManager.GetActiveScene();
+
+        if(scene.name=="PacmanCo-Op")
+        {
+            if(collision.gameObject.layer == LayerMask.NameToLayer("Pacman")) {
+                if(this.frightened.enabled) {
+                    audio.PlayOneShot(ghostSound);
+                    FindObjectOfType<GameManagerCoOp>().GhostEaten(this);
+                } else {
+                    FindObjectOfType<GameManagerCoOp>().PacmanEaten();
+                }
+            }
+        }
+        else{
+            if(collision.gameObject.layer == LayerMask.NameToLayer("Pacman")) {
+                if(this.frightened.enabled) {
+                    audio.PlayOneShot(ghostSound);
+                    FindObjectOfType<GameManager>().GhostEaten(this);
+                } else {
+                    FindObjectOfType<GameManager>().PacmanEaten();
+                }
             }
         }
     }

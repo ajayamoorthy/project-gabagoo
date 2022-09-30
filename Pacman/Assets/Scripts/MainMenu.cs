@@ -23,4 +23,8 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("VersionNotes");
     }
 
+    public void HowTo() {
+        SceneManager.LoadScene("HowToScreen");
+    }
+
 }

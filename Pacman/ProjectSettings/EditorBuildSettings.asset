@@ -27,6 +27,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Credits.unity
     guid: 625fcab99d472094c9ad5b3443540953
   - enabled: 1
+    path: Assets/Scenes/HowToScreen.unity
+    guid: a6f58f6db3955be4baab037cc6f386b4
+  - enabled: 1
     path: Assets/Scenes/VersionNotes.unity
     guid: de27e7215f0e8d4408a40d20ad7d6158
+  - enabled: 1
+    path: Assets/Scenes/PacmanCo-Op.unity
+    guid: d6b0c1ac4b905c8429e976bc9b6e949e
+  - enabled: 1
+    path: Assets/Scenes/GameMode.unity
+    guid: 3c742d2e3ae96594caab275343f07a21
   m_configObjects: {}
