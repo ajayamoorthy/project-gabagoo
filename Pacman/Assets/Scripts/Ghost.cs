@@ -1,9 +1,13 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Movement))]
 
 public class Ghost : MonoBehaviour
 {
+    public AudioClip ghostSound;
+    private AudioSource audio;
+
     public Movement movement { get; private set; }
     public GhostHome home { get; private set; }
     public GhostScatter scatter { get; private set; }
@@ -15,6 +19,7 @@ public class Ghost : MonoBehaviour
 
     private void Awake()
     {
+        audio = transform.GetComponent<AudioSource>();
         this.movement = GetComponent<Movement>();
         this.home = GetComponent<GhostHome>();
         this.scatter = GetComponent<GhostScatter>();
@@ -53,11 +58,27 @@ public class Ghost : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.layer == LayerMask.NameToLayer("Pacman")) {
-            if(this.frightened.enabled) {
-                FindObjectOfType<GameManager>().GhostEaten(this);
-            } else {
-                FindObjectOfType<GameManager>().PacmanEaten();
+        Scene scene = SceneManager.GetActiveScene();
+
+        if(scene.name=="PacmanCo-Op")
+        {
+            if(collision.gameObject.layer == LayerMask.NameToLayer("Pacman")) {
+                if(this.frightened.enabled) {
+                    audio.PlayOneShot(ghostSound);
+                    FindObjectOfType<GameManagerCoOp>().GhostEaten(this);
+                } else {
+                    FindObjectOfType<GameManagerCoOp>().PacmanEaten();
+                }
+            }
+        }
+        else{
+            if(collision.gameObject.layer == LayerMask.NameToLayer("Pacman")) {
+                if(this.frightened.enabled) {
+                    audio.PlayOneShot(ghostSound);
+                    FindObjectOfType<GameManager>().GhostEaten(this);
+                } else {
+                    FindObjectOfType<GameManager>().PacmanEaten();
+                }
             }
         }
     }

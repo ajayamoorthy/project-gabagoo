@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Pacman : MonoBehaviour
 {
+    public AudioClip dieSound;
+    private AudioSource audio;
 
     public AnimatedSprite deathSequence;
     public SpriteRenderer spriteRenderer { get; private set; }
@@ -12,6 +14,7 @@ public class Pacman : MonoBehaviour
 
     private void Awake()
     {
+        audio = transform.GetComponent<AudioSource>();
         this.spriteRenderer = GetComponent<SpriteRenderer>();
         this.collider = GetComponent<Collider2D>();
         this.movement = GetComponent<Movement>();
@@ -19,16 +22,16 @@ public class Pacman : MonoBehaviour
 
     public void Update()
     {
-        if(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) {
+        if(Input.GetKeyDown(KeyCode.W)) {
             this.movement.SetDirection(Vector2.up);
         }
-        else if(Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) {
+        else if(Input.GetKeyDown(KeyCode.S)) {
             this.movement.SetDirection(Vector2.down);
         }
-        else if(Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)) {
+        else if(Input.GetKeyDown(KeyCode.A)) {
             this.movement.SetDirection(Vector2.left);
         }
-        else if(Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) {
+        else if(Input.GetKeyDown(KeyCode.D)) {
             this.movement.SetDirection(Vector2.right);
         }
 
@@ -56,6 +59,7 @@ public class Pacman : MonoBehaviour
         this.deathSequence.enabled = true;
         this.deathSequence.spriteRenderer.enabled = true;
         this.deathSequence.Restart();
+        audio.PlayOneShot(dieSound);
     }
 
 }

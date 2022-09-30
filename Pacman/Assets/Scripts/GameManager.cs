@@ -1,8 +1,12 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public AudioClip pelletSound;
+    private AudioSource audio;
+
     public Ghost[] ghosts;
     public Pacman pacman;
     public Transform pellets;
@@ -17,6 +21,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        audio = transform.GetComponent<AudioSource>();
         NewGame();
     }
 
@@ -64,6 +69,7 @@ public class GameManager : MonoBehaviour
         }
 
         this.pacman.gameObject.SetActive(false);
+        SceneManager.LoadScene("GameOver");
     }
 
     private void SetScore(int score)
@@ -100,6 +106,10 @@ public class GameManager : MonoBehaviour
 
     public void PelletEaten(Pellet pellet)
     {
+        if(!audio.isPlaying) {
+            audio.PlayOneShot(pelletSound);
+        }
+
         pellet.gameObject.SetActive(false);
 
         SetScore(this.score + pellet.points);
@@ -119,6 +129,22 @@ public class GameManager : MonoBehaviour
         PelletEaten(pellet);
         CancelInvoke(nameof(ResetGhostMultiplier));
         Invoke(nameof(ResetGhostMultiplier), pellet.duration);
+    }
+
+    public void FruitEaten(Fruit fruit)
+    {
+        if(!audio.isPlaying) {
+            audio.PlayOneShot(pelletSound);
+        }
+
+        fruit.gameObject.SetActive(false);
+
+        SetScore(this.score + fruit.points);
+
+        if(!HasRemainingPellets()) {
+            this.pacman.gameObject.SetActive(false);
+            Invoke(nameof(NewRound), 3.0f);
+        }
     }
 
     private bool HasRemainingPellets()

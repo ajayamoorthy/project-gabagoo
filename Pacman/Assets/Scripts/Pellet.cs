@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Collider2D))]
 public class Pellet : MonoBehaviour
@@ -7,7 +8,15 @@ public class Pellet : MonoBehaviour
 
     protected virtual void Eat()
     {
-        FindObjectOfType<GameManager>().PelletEaten(this);
+        Scene scene = SceneManager.GetActiveScene();
+        if(scene.name=="PacmanCo-Op")
+        {
+            FindObjectOfType<GameManagerCoOp>().PelletEaten(this);
+        }
+        else{
+            FindObjectOfType<GameManager>().PelletEaten(this);
+        }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D other)

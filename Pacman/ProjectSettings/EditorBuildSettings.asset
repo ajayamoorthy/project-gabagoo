@@ -9,15 +9,30 @@ EditorBuildSettings:
     path: Assets/Scenes/TitleScreen.unity
     guid: 8fd762c76bf63644990292bd12c83e35
   - enabled: 1
+    path: Assets/Scenes/SplashScreen.unity
+    guid: 98743d171d494e4458c65c9e76ade00b
+  - enabled: 1
     path: Assets/Scenes/StartScreen.unity
     guid: 97875ca901c73284bb37fa507f259999
   - enabled: 1
+    path: Assets/Scenes/PauseMenu.unity
+    guid: 301656944dd2bda41a6ee5adccac1789
+  - enabled: 1
     path: Assets/Scenes/Pacman.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: cd1546bae13136241a1fc1cbed3faecb
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: 625fcab99d472094c9ad5b3443540953
   - enabled: 1
     path: Assets/Scenes/VersionNotes.unity
     guid: de27e7215f0e8d4408a40d20ad7d6158
+  - enabled: 1
+    path: Assets/Scenes/PacmanCo-Op.unity
+    guid: d6b0c1ac4b905c8429e976bc9b6e949e
+  - enabled: 1
+    path: Assets/Scenes/GameMode.unity
+    guid: 3c742d2e3ae96594caab275343f07a21
   m_configObjects: {}
