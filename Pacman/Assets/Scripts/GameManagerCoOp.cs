@@ -31,6 +31,13 @@ public class GameManagerCoOp : MonoBehaviour
         if(this.lives <= 0 && Input.anyKeyDown) {
             NewGame();
         }
+
+        if(Input.GetKeyDown(KeyCode.R)) {
+            NewGame();
+        }
+        if(Input.GetKeyDown(KeyCode.P)) {
+            SceneManager.LoadScene("PauseMenuCo-Op");
+        }
     }
 
     private void NewGame()
