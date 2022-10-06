@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,11 +9,13 @@ public class Pacman : MonoBehaviour
 {
     public AudioClip dieSound;
     private AudioSource audio;
+    public CameraShake cameraShake;
 
     public AnimatedSprite deathSequence;
     public SpriteRenderer spriteRenderer { get; private set; }
     public new Collider2D collider { get; private set; }
     public Movement movement { get; private set; }
+
 
     private void Awake()
     {
@@ -20,6 +24,7 @@ public class Pacman : MonoBehaviour
         this.collider = GetComponent<Collider2D>();
         this.movement = GetComponent<Movement>();
     }
+
 
     public void Update()
     {
@@ -53,6 +58,7 @@ public class Pacman : MonoBehaviour
 
     public void DeathSequence()
     {
+        StartCoroutine(cameraShake.Shake(.2f, .7f));
         this.enabled = false;
         this.spriteRenderer.enabled = false;
         this.collider.enabled = false;

@@ -798,6 +798,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -871,6 +872,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4177ae58a7fc7194c8c9114a54bd0170, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &529474116
 GameObject:
   m_ObjectHideFlags: 0
@@ -12299,6 +12312,10 @@ PrefabInstance:
       propertyPath: dieSound
       value: 
       objectReference: {fileID: 8300000, guid: 8fb2fe05723ae174c9f99eb1e0236c82, type: 3}
+    - target: {fileID: 7551230220774079880, guid: af1f6c6e900a21443a8e616469d61614, type: 3}
+      propertyPath: cameraShake
+      value: 
+      objectReference: {fileID: 519420033}
     - target: {fileID: 7551230220774079881, guid: af1f6c6e900a21443a8e616469d61614, type: 3}
       propertyPath: m_Name
       value: Pacman
