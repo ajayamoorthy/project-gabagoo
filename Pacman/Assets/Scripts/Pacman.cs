@@ -35,12 +35,6 @@ public class Pacman : MonoBehaviour
         else if(Input.GetKeyDown(KeyCode.D)) {
             this.movement.SetDirection(Vector2.right);
         }
-        else if(Input.GetKeyDown(KeyCode.P)){
-            SceneManager.LoadScene("PauseMenu");
-        }
-        else if(Input.GetKeyDown(KeyCode.R)){
-            SceneManager.LoadScene("Pacman");
-        }
 
         float angle = Mathf.Atan2(this.movement.direction.y, this.movement.direction.x);
         this.transform.rotation = Quaternion.AngleAxis(angle * Mathf.Rad2Deg, Vector3.forward);
