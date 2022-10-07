@@ -69,13 +69,13 @@ public class GameManager : MonoBehaviour
 
     private void GameOver()
     {
-        gameOverText.enabled = true;
+        //gameOverText.enabled = true;
 
-        for(int i = 0; i < this.ghosts.Length; i++) {
-            this.ghosts[i].gameObject.SetActive(false);
-        }
+        //for(int i = 0; i < this.ghosts.Length; i++) {
+       //     this.ghosts[i].gameObject.SetActive(false);
+       // }
 
-        this.pacman.gameObject.SetActive(false);
+       // this.pacman.gameObject.SetActive(false);
         SceneManager.LoadScene("GameOver");
     }
 
