@@ -43,6 +43,7 @@ public class GameManager : MonoBehaviour
         SetScore(0);
         SetLives(3);
         NewRound();
+        TimerController.instance.BeginTimer();
     }
 
     private void NewRound()

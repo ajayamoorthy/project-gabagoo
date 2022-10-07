@@ -23,6 +23,7 @@ public class Pacman : MonoBehaviour
         this.spriteRenderer = GetComponent<SpriteRenderer>();
         this.collider = GetComponent<Collider2D>();
         this.movement = GetComponent<Movement>();
+        TimerController.instance.BeginTimer();
     }
 
 
