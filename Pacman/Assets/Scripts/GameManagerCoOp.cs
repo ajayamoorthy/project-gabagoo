@@ -126,9 +126,10 @@ public class GameManagerCoOp : MonoBehaviour
         SetScore(this.score + pellet.points);
 
         if(!HasRemainingPellets()) {
-            this.pacman.gameObject.SetActive(false);
-            this.pacman2.gameObject.SetActive(false);
-            Invoke(nameof(NewRound), 3.0f);
+            SceneManager.LoadScene("YouWonCo-Op");
+            //this.pacman.gameObject.SetActive(false);
+            //this.pacman2.gameObject.SetActive(false);
+            //Invoke(nameof(NewRound), 3.0f);
         }
     }
 

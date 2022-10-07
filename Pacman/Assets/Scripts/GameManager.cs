@@ -122,8 +122,9 @@ public class GameManager : MonoBehaviour
         SetScore(this.score + pellet.points);
 
         if(!HasRemainingPellets()) {
-            this.pacman.gameObject.SetActive(false);
-            Invoke(nameof(NewRound), 3.0f);
+            SceneManager.LoadScene("YouWonMenu");
+            //this.pacman.gameObject.SetActive(false);
+            //Invoke(nameof(NewRound), 3.0f);
         }
     }
 
