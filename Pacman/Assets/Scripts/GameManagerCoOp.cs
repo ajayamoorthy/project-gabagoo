@@ -45,6 +45,7 @@ public class GameManagerCoOp : MonoBehaviour
         SetScore(0);
         SetLives(3);
         NewRound();
+        TimerController.instance.BeginTimer();
     }
 
     private void NewRound()
