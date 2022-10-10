@@ -412,8 +412,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -220, y: -648.5351}
-  m_SizeDelta: {x: 210, y: 1650}
+  m_AnchoredPosition: {x: -220, y: -73.53506}
+  m_SizeDelta: {x: 210, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1051381694
 MonoBehaviour:
@@ -435,67 +435,32 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Version 0.0.0.0s0\r\n\r\nThis project is basic Pacman created using the
-    Zigorus tutorial. Pacman goes around the screen consuming pellets, while avoiding
-    colorful ghosts until he eats a big pellet, after which he will be able to target
-    the ghosts for a short time.\r\n\r\nVersion 0.0.1.0s1\r\n\r\nNew Start Screen:
-    Players now have a start screen which has 4 buttons. The first button titled
-    \u201CPlay\u201D allows the player to start the game. The second button titled
-    \u201CCredits\u201D lets the player see a scrollable screen where the creators
-    and resources are credited. The third button titled \u201CNotes\u201D lets the
-    player see the version notes of the game. The fourth button is called \u201CExit\u201D
-    and allows the player to exit the game.\r\n\r\nScore Count: Players can now see
-    their score in the top left corner of the screen with the player gaining 10 points
-    per pellet consumed. When PacMan dies, the score is not reset until the game
-    is won or Pacman runs out of lives.\r\n\r\nVersion 0.0.2.0s2\r\n\r\nAdded Game
-    Audio: When the player is on the start screen music starts to play. A sound effect
-    is also triggered when the player hovers over the buttons on the home screen.\r\n\r\nTitle
-    Screen: The game now has a title before the start screen where the player can
-    access the start screen if the space button is pressed on the title screen. Hitting
-    the \u201Cexit\u201D button on the start screen also directs the player to the
-    title screen.\r\n\r\nWPI Splash Screen: A splash screen that provides credits
-    to the resources used in this project was added. The splash screen appears after
-    the title screen.\r\n\r\nLife Count: Players have 3 lives to successfully complete
-    the level, a factor of the game that is displayed in the top right corner of
-    the screen.\r\n\r\nVersion Notes Fix: Version Notes now start with the most recent
-    release notes instead of starting with the oldest release notes.\r\n\r\nVersion
-    0.0.3.0s3:\r\n\r\nAdded Game Audio: Sound effects have been added for when PacMan
-    eats a pellet, PacMan is eaten by a ghost, and PacMan eats a ghost. \r\n\r\nGame
-    Over Screen: Lets the player know that they lost the game which appears when
-    the player loses all three lives. \r\n\r\nPause Menu: The pause menu appears
-    when the player clicks the pause button on the pacman screen which contains a
-    button to resume the game, go to the main menu, and exit the game.\r\n     \r\nVersion
-    0.0.4.0s4:\r\n\r\nAdded Fruit Power-Up: Added a new type of pellet to the game
-    that looks like an apple. When PacMan consumes the apple pellet, the player\u2019s
-    score increases by 500 points.\r\n\r\nAdded a How to Play Screen: Added a screen
-    that names the ghosts and explains how to get points by assigning the different
-    pellets different point values. Also tells the player that if the ghost catches
-    them, that they will lose one life.\r\n\r\nAdded Local Co-Op: When the play button
-    is pressed on the start menu the player can choose to play either single-player
-    or local co-op. The yellow PacMan uses WASD to move around, while the red PacMan
-    can be controlled using the arrow keys by another player. The players work together
-    to win the game and gain score collectively. If either of the PacMan die they
-    both die and lose a life.\r\n\r\nAdded Restart Button to Pause Menu: A restart
-    button was added to the existing Pause Menu that when clicked, causes the game
-    to restart.\r\n\r\nNew Key Bindings in the Pacman Screen: Pressing the \u201CP\u201D
-    key in the pacman screen brings up the pause menu, pausing the game. Pressing
-    the \u201CR\u201D key restarts the game.\r\n\r\nVersion 0.0.5.0s5:\r\n\r\nAdded
-    a Win Screen: When the player successfully completes the game, a win screen pops
-    up informing the player that they have won. The screen contains a restart button
-    which starts a new game, a return to main menu button which takes the player
-    back to the main menu, and an exit button which exits the game.\r\n\r\nAdded
-    Screen-Shake on Death: When the PacMan runs into a ghost, the screen shakes to
-    show the player that they have just lost a life.\r\n\r\nAdded Timer: A timer
-    was added to the top of the screen, showing the player how long they have spent
-    on the current level in both the single-player and the local co-op version of
-    the game.\r\n\r\nAdded Transitions and Animations: Removed buttons on the title
-    screen and the splash screen so that transitions occur automatically. Added animations
-    on the first screen so that the player doesn't have to click through the splash
-    screen to get to the game. Added animations to the main menu.\r\n\nVersion 0.0.6.0s6:\r\n\nFuture/Unfinished
-    Features Screen: Added a screen where future/unfinished features are displayed
-    on a scrollable screen with a back button that returns the player to the start
-    screen.\r\n\r\nFuture Features Button: Added a future features button on the
-    start screen which takes the player to the future/unfinished features screen.\r"
+  m_text: 'Future/Unfinished Features:
+
+    New levels
+
+    Scoreboard scene
+
+    Shop
+    to buy new Pac-Man items
+
+    Coin system that gives coins after the level is
+    finished based on # of points
+
+    Speed power up
+
+    Select level scene
+
+    The
+    end screen showing the final time to complete the game
+
+    Ability to choose
+    between playable characters ie: Pac-Man or Mrs. Pac-Man
+
+    New fruits with
+    different abilities
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -522,8 +487,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15
-  m_fontSizeBase: 15
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

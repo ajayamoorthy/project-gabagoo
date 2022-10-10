@@ -47,4 +47,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/YouWonMenuCo-Op.unity
     guid: dfa19c8cc6060a046b36f7bd2ee5ccb3
+  - enabled: 1
+    path: Assets/Scenes/FutureUnfinishedFeatures.unity
+    guid: 32da7b91b757d46468309c56bd23ae38
   m_configObjects: {}
